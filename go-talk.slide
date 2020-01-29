@@ -9,11 +9,9 @@ History
 
 Original Designers:
 - Robert Griesemer
-- Rob Pike
-- and Ken Thompson
-- test
+
 
 * ¿Por qué?
-Los diseñadores no estaban satisfechos con los lenguajes que tenían disponibles para el trabajo que tenían que hacer.
+Los diseñadores no estaban satisfechos con los lenguajes que tenían disponibles para desarrollar server side.
 
     Computers had become enormously quicker since languages such as C, C++ and Java were first developed but the act of programming had not itself advanced nearly as much. Also, it was clear that multiprocessors were becoming universal but most languages offered little help to program them efficiently and safely.
