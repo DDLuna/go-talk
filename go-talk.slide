@@ -79,7 +79,7 @@ Comandos básicos desde consola
 - No pueden ser usados como identificadores
 - Go apunta a ser simple y tener pocos keywords
 
-.image ./keywords.png _ _
+.image ./img/keywords.png _ _
 
 * Tipos Básicos
 
@@ -152,3 +152,5 @@ _using_range_
 * Funciones
 
 .play -edit ./src/functions/functions.go
+
+
