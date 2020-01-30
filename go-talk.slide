@@ -111,7 +111,7 @@ Comandos básicos desde consola
 
 * Paquetes
 
-
+.play -edit ./src/import_package/import_package.go
 
 * Tipos de if
 
