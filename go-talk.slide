@@ -5,7 +5,7 @@ Damian Luna
 
 * ¿Qué es Go?
 
-History
+Historia
 
 Original Designers:
 - Robert Griesemer
@@ -26,5 +26,129 @@ Los diseñadores no estaban satisfechos con los lenguajes que tenían disponible
 - Rápido
 - Concurrente
 
-let algo 
+* Quiénes actualmente utilizan Go?
 
+- Mercadolibre 
+- YouTube 
+- Google
+- Microsoft
+- Uber
+- SpaceX
+- Facebook
+- Github
+- Netflix
+- Twitch
+
+- [[https://github.com/golang/go/wiki/GoUsers][Otros...]]
+
+* ¿Proyectos hechos en GO?
+
+Docker
+Kubernetes
+
+* Go Basics
+
+- Fuertemente tipado
+- Inferencia de tipos
+- Funciones son _first_ _class_ _citizens_: las funciones pueden ser pasadas como parámetros
+- Parámetros pasados siempre por _valor_, pero tenemos punteros
+- Gargabage Collector
+- "Semi” Orientado a objetos -> _Composition_, _Encapsulation_, _Polymorphism_, not _Inheritance_
+- Built in Web Server
+- Built in Testing framework
+
+* Hello world!!
+
+.play -edit ./src/hello_world/hello_world.go
+
+Comandos básicos desde consola
+
+	go command [arguments]
+
+	go build     Compila paquetes y dependencias
+	go clean     Remueve archivos object     
+	go get       Descarga e instala paquetes y dependencias
+	go install   Compila e instala paquetes y dependencias
+	go run       Compila y corre paquetes y dependencias
+	go test      Testea paquetes
+	go fmt       Formatea tu código
+
+* Keywords
+
+- Los Keywords son palabras reservadas
+- No pueden ser usados como identificadores
+- Go apunta a ser simple y tener pocos keywords
+
+.image ./keywords.png _ _
+
+* Tipos Básicos
+
+- bool
+- int  int8  int16  int32  int64
+- uint uint8 uint16 uint32 uint64 uintptr
+- float32 float64
+- complex64 complex128
+- [[https://blog.golang.org/strings][string]]
+- byte // alias for uint8
+- rune // alias for int32 - unicode code point
+
+* Constantes
+
+- Pueden ser del tipo: rune, string, boolean o valores numéricos
+
+- Ejemplos:
+
+	const World = "世界"
+	const Truth = true
+    const Num = 13
+
+* Inicialización de Variables
+
+	var s string
+	var s string = ""
+	var s = ""
+	s := ""
+
+* Paquetes
+
+
+
+* Tipos de if
+
+	if x < 0 { }
+
+	if v := math.Pow(x, n); v < lim {}
+
+	if ... {} else { }
+
+* Iteraciones #1
+
+_for_initialization;_condition;_post_{_}_
+
+.play -edit ./src/for_1/for_1.go
+
+* Iteraciones #2
+
+_for_condition_{_}_
+
+.play -edit ./src/for_2/for_2.go
+
+* Iteraciones #3
+
+_for_{_}_
+
+.play -edit ./src/for_3/for_3.go
+
+* Iteraciones #4
+
+_using_range_
+
+.play -edit ./src/for_4/for_4.go
+
+* Switch
+
+.play -edit ./src/switch/switch.go
+
+* Funciones
+
+.play -edit ./src/functions/functions.go
