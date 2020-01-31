@@ -288,5 +288,8 @@ los consumers pueden chequear el status del channel con el segundo parametro de 
 
 	go get -u github.com/gin-gonic/gin
 
+* Simple de usar
+
+.play -edit ./src/api/server.go
 
 
