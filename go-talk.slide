@@ -284,3 +284,9 @@ los consumers pueden chequear el status del channel con el segundo parametro de 
 
 .play -edit ./src/chan/chan.go
 
+* Web framework: gin-gonic
+
+	go get -u github.com/gin-gonic/gin
+
+
+
