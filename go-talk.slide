@@ -153,4 +153,134 @@ _using_range_
 
 .play -edit ./src/functions/functions.go
 
+* Punteros
+
+.play -edit ./src/prts/prts.go
+
+* Structs
+
+	type tree struct {
+		value int
+		left  *tree
+		right *tree
+	}
+
+	func (t *tree) add(newValue int) {
+		if t == nil {
+			t = &tree{value: newValue}
+		}
+		if t.value > newValue {
+			t.right.add(newValue)
+		} else {
+			t.left.add(newValue)
+		}
+	}
+
+* Slices
+
+.play -edit ./src/slices/slices.go
+
+* Maps
+
+.play -edit ./src/maps/maps.go
+
+* Funciones como valores
+
+* Composición
+
+- Funciona metiendo un struct adentro de otro struct
+- Se puede acceder a los métodos y datos exportados
+- Los structs internos son "promovidos"
+
+* Composición
+
+.play -edit ./src/composition/composition.go
+
+* Interfaces
+
+.play -edit ./src/interfaces/interfaces.go
+
+* Interfaz vacia
+
+	func(param interface{}) {
+		fmt.Println(param)
+	}
+
+* Testing
+
+- Cada archivo con el suffix _test es un archivo de test para Go
+- En los tests se pueden correr tests, benchamarks y Ejemplos
+
+- Cada funcion con el nombre Test(*) es una funcion de Test
+- Cada funcion con el nombre Benchmark(*) es una funcion de Benchmark
+- Cada funcion con el nombre Example(*) es una function de Ejemplo
+
+
+* Test
+
+.play -edit ./src/interfaces/interfaces_test.go
+
+* Testify
+
+Framework que le agrega asserts....
+
+* Errores
+
+.play -edit ./src/errors/errors.go
+
+* Defer
+
+.play -edit ./src/defer/defer.go
+
+* Panic
+
+Similar a las excepciones en otros lenguajes, es un error irrecuperable
+Panic aborta la ejecución y corre los defers pendientes recursivamante del callstack
+Solamente frena con un recover(), que no debería usarse
+
+.play -edit ./src/panic/panic.go
+
+* Goroutines
+
+Una goroutine es un hilo liviano que permite la ejecución de código concurrente.
+Todo programa de go tiene al menos una goroutine main que es la primera creada al comienzo.
+
+.play -edit ./src/goroutines/goroutines.go
+
+* Wait Group
+
+.play -edit ./src/goroutines_2/goroutines_2.go
+
+* Channels
+
+Creación de un channel:
+
+	var sChannel chan string = make(chan string)
+
+El operador <- envia información a un channel:
+
+	sChannel <- "hello"
+
+y recibw información desde él:
+
+	var s string = <- sChannel
+
+los channels son bloqueantes, es decir, si un channel está vacio se bloquea hasta que contenga algún mensaje, y si el channel está lleno espera a poder encolar un mensaje
+
+* Channels 2
+Buffered channel:
+
+	var sChannel chan string = make(chan string, 100)
+
+close() cierra un channel para indicar a sus consumers que no se van a enviar más elementos a ese channel
+
+	close(intChannel)
+
+los consumers pueden chequear el status del channel con el segundo parametro de la expresión:
+
+	v, ok := <- sChannel
+
+* Wait con channels
+
+.play -edit ./src/chan/chan.go
 
